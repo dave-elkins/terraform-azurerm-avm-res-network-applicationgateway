@@ -449,6 +449,14 @@ resource "azurerm_application_gateway" "this" {
       }
     }
   }
+
+  # want to ignore this because it is currently being handled outside of our control.
+  # if the cert was stored in the key vault we could probably avoid this.
+  lifecycle {
+    ignore_changes = [
+      trusted_client_certificate
+    ]
+  }
 }
 
 

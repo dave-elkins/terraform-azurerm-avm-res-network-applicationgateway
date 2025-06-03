@@ -588,12 +588,12 @@ DESCRIPTION
   nullable    = false
 
   validation {
-    condition     = can(regex("^(Standard_v2|WAF_v2)$", var.sku.name))
-    error_message = "SKU name must be 'Standard_v2' or 'WAF_v2'."
+    condition     = can(regex("^(Standard_v2|WAF_v2|Standard|WAF)$", var.sku.name))
+    error_message = "SKU name must be 'Standard_v2', 'WAF_v2', 'Standard', 'WAF'."
   }
   validation {
-    condition     = can(regex("^(Standard_v2|WAF_v2)$", var.sku.tier))
-    error_message = "SKU tier must be 'Standard_v2' or 'WAF_v2'."
+    condition     = can(regex("^(Standard_v2|WAF_v2|Standard|WAF)$", var.sku.tier))
+    error_message = "SKU tier must be 'Standard_v2', 'WAF_v2', 'Standard', 'WAF'."
   }
 }
 

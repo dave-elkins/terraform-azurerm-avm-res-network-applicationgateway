@@ -818,3 +818,10 @@ variable "zones" {
   default     = ["1", "2", "3"] #["1", "2", "3"]
   description = "(Optional) Specifies a list of Availability Zones in which this Application Gateway should be located. Changing this forces a new Application Gateway to be created."
 }
+
+# Added by DE
+variable "force_firewall_policy_association" {
+  type        = bool
+  default     = true
+  description = "(Optional) force_firewall_policy_association"
+}

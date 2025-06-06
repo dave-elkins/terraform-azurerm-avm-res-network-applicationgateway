@@ -634,11 +634,11 @@ DESCRIPTION
     condition     = try(var.ssl_policy.policy_type == null ? false : contains(["Predefined", "Custom", "CustomV2"], var.ssl_policy.policy_type), true)
     error_message = "policy_type must be one of: Predefined, Custom, or CustomV2."
   }
-  validation {
-
-    condition     = try(var.ssl_policy.min_protocol_version == null ? false : contains(["TLSv1_2", "TLSv1_3"], var.ssl_policy.min_protocol_version), true)
-    error_message = "min_protocol_version must be TLSv1_2 or TLSv1_3 if specified."
-  }
+  # DE - commented this out ... i think we should just use the most recent Predefined policy
+  #validation {
+  #  condition     = try(var.ssl_policy.min_protocol_version == null ? false : contains(["TLSv1_2", "TLSv1_3"], var.ssl_policy.min_protocol_version), true)
+  #  error_message = "min_protocol_version must be TLSv1_2 or TLSv1_3 if specified."
+  #}
 }
 
 variable "ssl_profile" {

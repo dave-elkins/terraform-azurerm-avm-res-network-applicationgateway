@@ -617,7 +617,7 @@ variable "ssl_policy" {
   type = object({
     cipher_suites        = optional(list(string))
     disabled_protocols   = optional(list(string))
-    min_protocol_version = optional(string, "TLSv1_2") # Default to TLSv1_2
+    min_protocol_version = optional(string) # Default to TLSv1_2 # Changed by DE
     policy_name          = optional(string)
     policy_type          = optional(string)
   })

@@ -454,7 +454,8 @@ resource "azurerm_application_gateway" "this" {
   # if the cert was stored in the key vault we could probably avoid this.
   lifecycle {
     ignore_changes = [
-      trusted_client_certificate
+      trusted_client_certificate,
+      ssl_certificate
     ]
   }
 }
